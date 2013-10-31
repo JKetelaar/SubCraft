@@ -12,7 +12,6 @@ public class Boot {
         Lines.seperate();
         Parse.parse();
         Variables.playersDone.add("Jelle");
-        Variables.playersDone.add("Paradox");
         Set.set();
     }
 }
