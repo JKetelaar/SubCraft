@@ -5,7 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Boot extends JavaPlugin {
-    public void onEnable(){
+    public void onEnable() {
         getLogger().info("MCSub started!");
         Variables.setServerKey(Bukkit.getServerId());
         Start.startScript();

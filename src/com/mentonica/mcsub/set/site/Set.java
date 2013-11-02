@@ -12,7 +12,7 @@ public class Set {
     private static URL url;
 
     public static void set() throws IOException {
-        for (String s : Variables.getPlayersDone()){
+        for (String s : Variables.getPlayersDone()) {
             String URL_LOCATION = "http://spooner.accountservergroup.com/~mentonic/dev/dutchrastacraft/api/set.php?user=" + s;
             url = new URL(URL_LOCATION);
             URLConnection conn = url.openConnection();

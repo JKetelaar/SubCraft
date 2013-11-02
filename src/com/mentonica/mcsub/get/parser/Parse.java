@@ -33,8 +33,7 @@ public class Parse extends JavaPlugin {
             Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player found");
             Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
 
-        }
-        else {
+        } else {
             Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player not found");
         }
 

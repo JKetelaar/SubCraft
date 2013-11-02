@@ -16,7 +16,7 @@ public class Get extends JavaPlugin {
         URL url;
         String content = null;
         try {
-            String URL_LOCATION="http://spooner.accountservergroup.com/~mentonic/dev/dutchrastacraft/api/get.php?key=" + Variables.getServerKey();
+            String URL_LOCATION = "http://spooner.accountservergroup.com/~mentonic/dev/dutchrastacraft/api/get.php?key=" + Variables.getServerKey();
 
             url = new URL(URL_LOCATION);
 
