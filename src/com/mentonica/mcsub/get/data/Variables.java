@@ -16,6 +16,8 @@ public class Variables {
 
     private static int invamount;
 
+    private static int commandid;
+
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
     public static String getServerKey() {
@@ -70,5 +72,11 @@ public class Variables {
         Variables.invamount = invamount;
     }
 
+    public static int getCommandid() {
+        return commandid;
+    }
 
+    public static void setCommandid(int commandid) {
+        Variables.commandid = commandid;
+    }
 }
