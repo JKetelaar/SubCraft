@@ -21,7 +21,7 @@ public class Parse extends JavaPlugin {
                         }
                     }
                 },
-                0, 60 * 1000
+                0, (60 * 1000)
         );
     }
 
