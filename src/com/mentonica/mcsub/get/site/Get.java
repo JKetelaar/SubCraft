@@ -1,6 +1,7 @@
 package com.mentonica.mcsub.get.site;
 
 import com.mentonica.mcsub.get.data.Variables;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class Get {
+public class Get extends JavaPlugin {
 
     public static void getUsers() throws Exception {
         URL url;

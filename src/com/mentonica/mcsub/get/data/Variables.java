@@ -3,7 +3,12 @@ package com.mentonica.mcsub.get.data;
 import java.util.ArrayList;
 
 public class Variables {
+
+    private static String TPlayer;
+
     private static String urlContent;
+
+    private static String command;
 
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
@@ -17,6 +22,22 @@ public class Variables {
 
     public static ArrayList<String> getSplittedArray() {
         return splittedArray;
+    }
+
+    public static String getTPlayer() {
+        return TPlayer;
+    }
+
+    public static void setTPlayer(String TPlayer) {
+        Variables.TPlayer = TPlayer;
+    }
+
+    public static String getCommand() {
+        return command;
+    }
+
+    public static void setCommand(String command) {
+        Variables.command = command;
     }
 
 }

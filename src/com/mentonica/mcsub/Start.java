@@ -1,4 +1,4 @@
-package com.mentonica;
+package com.mentonica.mcsub;
 
 import com.mentonica.mcsub.get.parser.Parse;
 import com.mentonica.mcsub.get.site.Get;
@@ -9,21 +9,22 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 
-public class Boot extends JavaPlugin {
-    public void onEnable(){
-
+public class Start extends JavaPlugin {
+    private static String [] t = {"jeronimo078"};
+    public static void startScript(){
         try {
             Get.getUsers();
         } catch (Exception e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+            e.printStackTrace();
+         }
         Lines.seperate();
-        Parse.parse();
+        Parse p = new Parse();
+        p.startTimer();
         Variables.playersDone.add("Jelle");
         try {
             Set.set();
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
     }
 }
