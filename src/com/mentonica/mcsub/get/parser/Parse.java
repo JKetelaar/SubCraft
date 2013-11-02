@@ -21,7 +21,7 @@ public class Parse extends JavaPlugin {
                         }
                     }
                 },
-                60000
+                0, 60 * 1000
         );
     }
 
@@ -30,11 +30,12 @@ public class Parse extends JavaPlugin {
 
         Player player = Bukkit.getPlayerExact(args);
         if (player != null) {
-            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say palyer found");
+            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player found");
             Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
+
         }
         else {
-            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say player not found");
+            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player not found");
         }
 
         return false;

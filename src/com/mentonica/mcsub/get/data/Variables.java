@@ -6,11 +6,21 @@ public class Variables {
 
     private static String TPlayer;
 
+    private static String ServerKey;
+
     private static String urlContent;
 
     private static String command;
 
     public static ArrayList<String> splittedArray = new ArrayList<String>();
+
+    public static String getServerKey() {
+        return ServerKey;
+    }
+
+    public static void setServerKey(String serverKey) {
+        ServerKey = serverKey;
+    }
 
     public static String getUrlContent() {
         return urlContent;
