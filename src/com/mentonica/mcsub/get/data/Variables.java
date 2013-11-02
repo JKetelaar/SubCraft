@@ -12,6 +12,10 @@ public class Variables {
 
     private static String command;
 
+    private static int invcheck;
+
+    private static int invamount;
+
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
     public static String getServerKey() {
@@ -49,5 +53,22 @@ public class Variables {
     public static void setCommand(String command) {
         Variables.command = command;
     }
+
+    public static int getInvcheck() {
+        return invcheck;
+    }
+
+    public static int getInvamount() {
+        return invamount;
+    }
+
+    public static void setInvcheck(int invcheck) {
+        Variables.invcheck = invcheck;
+    }
+
+    public static void setInvamount(int invamount) {
+        Variables.invamount = invamount;
+    }
+
 
 }

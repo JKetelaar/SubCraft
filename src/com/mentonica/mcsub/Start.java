@@ -16,7 +16,6 @@ public class Start extends JavaPlugin {
         Lines.seperate();
         Parse p = new Parse();
         p.startTimer();
-        //Variables.playersDone.add("Jelle");
         //try {
         //  Set.set();
         //} catch (IOException e) {

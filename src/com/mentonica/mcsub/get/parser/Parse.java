@@ -17,6 +17,10 @@ public class Parse extends JavaPlugin {
                             String[] t = s.split("%20");
                             Variables.setTPlayer(t[1]);
                             Variables.setCommand(t[0]);
+                            Variables.setInvcheck(Integer.parseInt(t[3]));
+                            if (Variables.getInvcheck() == 1){
+                                Variables.setInvamount(Integer.parseInt(t[4]));
+                            }
                             parse(Variables.getTPlayer());
                         }
                     }
