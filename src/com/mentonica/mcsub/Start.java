@@ -6,7 +6,6 @@ import com.mentonica.mcsub.get.site.Lines;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Start extends JavaPlugin {
-    private static String[] t = {"jeronimo078"};
 
     public static void startScript() {
         try {
