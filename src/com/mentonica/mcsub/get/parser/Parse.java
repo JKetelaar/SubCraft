@@ -34,9 +34,13 @@ public class Parse extends JavaPlugin {
 
         Player player = Bukkit.getPlayerExact(args);
         if (player != null) {
+            if (Variables.getInvcheck() == 1){
+                if (player.getInventory().firstEmpty() != -1){
+
+                }
+            }
             Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player found");
             Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
-
         } else {
             Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player not found");
         }
