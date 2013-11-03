@@ -18,6 +18,8 @@ public class Variables {
 
     private static int commandid;
 
+    private static boolean able;
+
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
     public static String getServerKey() {
@@ -78,5 +80,13 @@ public class Variables {
 
     public static void setCommandid(int commandid) {
         Variables.commandid = commandid;
+    }
+
+    public static boolean isAble() {
+        return able;
+    }
+
+    public static void setAble(boolean able) {
+        Variables.able = able;
     }
 }

@@ -13,31 +13,40 @@ import java.net.URLConnection;
 public class Get extends JavaPlugin {
 
     public static void getUsers() throws Exception {
-        URL url;
-        String content = null;
-        try {
-            String URL_LOCATION = "http://spooner.accountservergroup.com/~mentonic/dev/dutchrastacraft/api/get.php?key=" + Variables.getServerKey();
+        if (Variables.isAble()) {
+            URL url;
+            String content = null;
+            try {
+                String URL_LOCATION = "http://spooner.accountservergroup.com/~mentonic/dev/dutchrastacraft/api/get.php?key=" + Variables.getServerKey();
 
-            url = new URL(URL_LOCATION);
+                url = new URL(URL_LOCATION);
 
-            URLConnection conn = url.openConnection();
+                URLConnection conn = url.openConnection();
 
-            BufferedReader br = new BufferedReader(
+                BufferedReader br = new BufferedReader(
 
-                    new InputStreamReader(conn.getInputStream()));
+                        new InputStreamReader(conn.getInputStream()));
 
-            String inputLine;
+                String inputLine;
 
-            while ((inputLine = br.readLine()) != null) {
-                content = inputLine;
+                while ((inputLine = br.readLine()) != null) {
+                    content = inputLine;
+                }
+                br.close();
+                Variables.setUrlContent(content);
+                //System.out.println(Variables.getUrlContent().toString());
+
+                String t = "No results found.";
+                if (Variables.getUrlContent().toString().equals(t)){
+                    System.out.println("Able set to false");
+                    Variables.setAble(false);
+                }
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            br.close();
-            Variables.setUrlContent(content);
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }
