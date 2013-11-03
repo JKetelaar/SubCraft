@@ -4,7 +4,11 @@ import com.mentonica.mcsub.get.data.Variables;
 import com.mentonica.mcsub.get.parser.Parse;
 import com.mentonica.mcsub.get.site.Get;
 import com.mentonica.mcsub.get.site.Lines;
+import com.mentonica.mcsub.set.SVariables;
+import com.mentonica.mcsub.set.site.Set;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.IOException;
 
 public class Start extends JavaPlugin {
 
@@ -23,9 +27,15 @@ public class Start extends JavaPlugin {
                         p.startParse();
                         Variables.setAble(true);
                         Variables.splittedArray.clear();
+                        try {
+                            Set.set();
+                        } catch (IOException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+                        SVariables.playersDone.clear();
                     }
                 },
-                0, (10 * 1000)
+                0, (60 * 1000)
         );
     }
 }

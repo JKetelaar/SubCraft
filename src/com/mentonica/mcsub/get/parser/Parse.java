@@ -1,6 +1,7 @@
 package com.mentonica.mcsub.get.parser;
 
 import com.mentonica.mcsub.get.data.Variables;
+import com.mentonica.mcsub.set.SVariables;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,7 +15,8 @@ public class Parse extends JavaPlugin {
                 String[] t = s.split("%20");
                 Variables.setCommand(t[0]);
                 Variables.setTPlayer(t[1]);
-
+                Variables.setCommandid(t[2]);
+                System.out.println(Variables.getCommandid());
                 Variables.setInvcheck(Integer.parseInt(t[3]));
                 if (Variables.getInvcheck() == 1) {
                     Variables.setInvamount(Integer.parseInt(t[4]));
@@ -35,6 +37,7 @@ public class Parse extends JavaPlugin {
             if ((Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() != 1) || (Variables.getInvcheck() == 0)) {
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player found");
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
+                SVariables.playersDone.add(Variables.getCommandid());
             }
 
         } else {

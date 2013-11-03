@@ -16,7 +16,7 @@ public class Variables {
 
     private static int invamount;
 
-    private static int commandid;
+    private static String commandid;
 
     private static boolean able;
 
@@ -74,11 +74,11 @@ public class Variables {
         Variables.invamount = invamount;
     }
 
-    public static int getCommandid() {
+    public static String getCommandid() {
         return commandid;
     }
 
-    public static void setCommandid(int commandid) {
+    public static void setCommandid(String commandid) {
         Variables.commandid = commandid;
     }
 
