@@ -37,7 +37,7 @@ public class Get extends JavaPlugin {
 
                 String t = "No results found.";
                 if (Variables.getUrlContent().toString().equals(t)) {
-                    System.out.println("Able set to false");
+                    System.out.println("No results found to execute commands for");
                     Variables.setAble(false);
                 }
 
