@@ -13,7 +13,6 @@ public class Parse extends JavaPlugin {
             for (String s : Variables.getSplittedArray()) {
                 String[] t = s.split("%20");
                 Variables.setCommand(t[0]);
-               // System.out.println(t[0]);
                 Variables.setTPlayer(t[1]);
 
                 Variables.setInvcheck(Integer.parseInt(t[3]));
@@ -33,9 +32,9 @@ public class Parse extends JavaPlugin {
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Inventory is full");
             }
 
-            if((Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() != 1) || (Variables.getInvcheck() == 0)){
-            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player found");
-            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
+            if ((Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() != 1) || (Variables.getInvcheck() == 0)) {
+                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player found");
+                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
             }
 
         } else {

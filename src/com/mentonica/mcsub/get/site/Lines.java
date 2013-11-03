@@ -19,7 +19,7 @@ public class Lines extends JavaPlugin {
                 //System.out.println(full);
                 for (String s : splitted) {
                     Variables.splittedArray.add(s);
-                   // System.out.println(s);
+                    // System.out.println(s);
 
                 }
             } catch (Exception e) {

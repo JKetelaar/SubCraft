@@ -8,7 +8,7 @@ public class Boot extends JavaPlugin {
     public void onEnable() {
         getLogger().info("MCSub started!");
         Variables.setServerKey(Bukkit.getServerId());
-        Start t =  new Start();
+        Start t = new Start();
         t.startTimer();
 
     }

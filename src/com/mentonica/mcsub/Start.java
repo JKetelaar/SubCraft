@@ -18,7 +18,6 @@ public class Start extends JavaPlugin {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                       // System.out.println(Variables.getUrlContent());
                         Lines.seperate();
                         Parse p = new Parse();
                         p.startParse();
