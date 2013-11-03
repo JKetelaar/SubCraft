@@ -1,4 +1,4 @@
-package com.mentonica.mcsub.get.rank.RankCheck;
+package com.mentonica.mcsub.get.rank;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -12,7 +12,7 @@ import junit.framework.TestCase;
 
 import org.yaml.snakeyaml.Yaml;
 
-public class LoadExampleTest extends TestCase {
+public class RankCheck extends TestCase {
     @SuppressWarnings("unchecked")
     public void testLoad() {
         Yaml yaml = new Yaml();
