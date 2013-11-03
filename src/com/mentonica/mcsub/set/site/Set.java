@@ -23,8 +23,7 @@ public class Set extends JavaPlugin {
                         new InputStreamReader(conn.getInputStream()));
             }
             System.out.println("All id's are set to done");
-        }
-        else{
+        } else {
             System.out.println("No id's are available to be set to done");
         }
     }

@@ -29,7 +29,6 @@ public class Parse extends JavaPlugin {
     public static boolean parse(String args) {
         Player player = Bukkit.getPlayerExact(args);
         if (player != null) {
-
             if (Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() == -1) {
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Inventory is full");
             }
