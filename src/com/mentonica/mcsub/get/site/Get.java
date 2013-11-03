@@ -1,5 +1,6 @@
 package com.mentonica.mcsub.get.site;
 
+import com.mentonica.mcsub.get.data.Constants;
 import com.mentonica.mcsub.get.data.Variables;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,7 +18,7 @@ public class Get extends JavaPlugin {
             URL url;
             String content = null;
             try {
-                String URL_LOCATION = "http://mentonica.com/dev/dutchrastacraft/api/get.php?key=" + Variables.getServerKey();
+                String URL_LOCATION = Constants.URL_LOCATION + "get.php?key=" + Variables.getServerKey();
 
                 url = new URL(URL_LOCATION);
 
