@@ -17,7 +17,7 @@ public class Get extends JavaPlugin {
             URL url;
             String content = null;
             try {
-                String URL_LOCATION = "http://spooner.accountservergroup.com/~mentonic/dev/dutchrastacraft/api/get.php?key=" + Variables.getServerKey();
+                String URL_LOCATION = "http://mentonica.com/dev/dutchrastacraft/api/get.php?key=" + Variables.getServerKey();
 
                 url = new URL(URL_LOCATION);
 
@@ -34,7 +34,6 @@ public class Get extends JavaPlugin {
                 }
                 br.close();
                 Variables.setUrlContent(content);
-                //System.out.println(Variables.getUrlContent().toString());
 
                 String t = "No results found.";
                 if (Variables.getUrlContent().toString().equals(t)) {
