@@ -10,7 +10,6 @@ public class Boot extends JavaPlugin {
         Variables.setServerKey(Bukkit.getServerId());
         Start t = new Start();
         t.startTimer();
-
     }
 
     @Override
