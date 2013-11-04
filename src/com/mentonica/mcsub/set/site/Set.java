@@ -1,6 +1,7 @@
 package com.mentonica.mcsub.set.site;
 
 import com.mentonica.mcsub.get.data.Constants;
+import com.mentonica.mcsub.get.data.Variables;
 import com.mentonica.mcsub.set.SVariables;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -16,7 +17,7 @@ public class Set extends JavaPlugin {
     public static void set() throws IOException {
         if (SVariables.playersDone.size() > 0) {
             for (String s : SVariables.getPlayersDone()) {
-                String URL_LOCATION = Constants.URL_LOCATION + "set.php?commandid=" + s;
+                String URL_LOCATION = Constants.URL_LOCATION + "set.php?commandid=" + s + "&key=" + Variables.getServerKey();
                 url = new URL(URL_LOCATION);
                 URLConnection conn = url.openConnection();
                 new BufferedReader(
