@@ -13,6 +13,7 @@ import java.net.URLConnection;
 
 public class Set extends JavaPlugin {
     private static URL url;
+    static String content = null;
 
     public static void set() throws IOException {
         if (SVariables.playersDone.size() > 0) {
@@ -20,12 +21,23 @@ public class Set extends JavaPlugin {
                 String URL_LOCATION = Constants.URL_LOCATION + "set.php?commandid=" + s + "&key=" + Variables.getServerKey();
                 url = new URL(URL_LOCATION);
                 URLConnection conn = url.openConnection();
-                new BufferedReader(
+                BufferedReader br = new BufferedReader(
                         new InputStreamReader(conn.getInputStream()));
+
+
+                String inputLine;
+
+                while ((inputLine = br.readLine()) != null) {
+                    content = inputLine;
+                }
+                br.close();
             }
-            System.out.println("All id's are set to done");
-        } else {
-            System.out.println("No id's are available to be set to done");
+            if (content.toString() == "No results available to be set to done.") {
+                System.out.println("Error occured, please contact an administrator");
+                Variables.setError(true);
+            } else {
+                System.out.println("Successfully set all commands to done.");
+            }
         }
     }
 }

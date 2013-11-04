@@ -20,6 +20,8 @@ public class Variables {
 
     private static boolean able;
 
+    private static boolean error;
+
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
     public static String getServerKey() {
@@ -88,5 +90,13 @@ public class Variables {
 
     public static void setAble(boolean able) {
         Variables.able = able;
+    }
+
+    public static boolean isError() {
+        return error;
+    }
+
+    public static void setError(boolean error) {
+        Variables.error = error;
     }
 }

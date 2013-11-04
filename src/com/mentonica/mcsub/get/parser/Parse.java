@@ -30,11 +30,13 @@ public class Parse extends JavaPlugin {
         Player player = Bukkit.getPlayerExact(args);
         if (player != null) {
             if (Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() == -1) {
-                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Inventory is full");
+                //Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Inventory is full");
+                player.sendMessage("Your inventory is full, please make space to receive your order");
             }
 
             if ((Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() != 1) || (Variables.getInvcheck() == 0)) {
-                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player found");
+                //Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player found");
+                player.sendMessage("You just received your order, please contact an administrator if this is not true");
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
                 SVariables.playersDone.add(Variables.getCommandid());
             }

@@ -17,22 +17,24 @@ public class Start extends JavaPlugin {
                 new java.util.TimerTask() {
                     @Override
                     public void run() {
-                        try {
-                            Get.getUsers();
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                        if (!Variables.isError()) {
+                            try {
+                                Get.getUsers();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            Lines.seperate();
+                            Parse p = new Parse();
+                            p.startParse();
+                            Variables.setAble(true);
+                            Variables.splittedArray.clear();
+                            try {
+                                Set.set();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            SVariables.playersDone.clear();
                         }
-                        Lines.seperate();
-                        Parse p = new Parse();
-                        p.startParse();
-                        Variables.setAble(true);
-                        Variables.splittedArray.clear();
-                        try {
-                            Set.set();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        SVariables.playersDone.clear();
                     }
                 },
                 0, (60 * 1000)
