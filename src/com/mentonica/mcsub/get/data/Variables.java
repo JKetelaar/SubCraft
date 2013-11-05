@@ -22,6 +22,8 @@ public class Variables {
 
     private static boolean error;
 
+    private static boolean full;
+
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
     public static String getServerKey() {
@@ -98,5 +100,13 @@ public class Variables {
 
     public static void setError(boolean error) {
         Variables.error = error;
+    }
+
+    public static boolean isFull() {
+        return full;
+    }
+
+    public static void setFull(boolean full) {
+        Variables.full = full;
     }
 }

@@ -33,9 +33,12 @@ public class Parse extends JavaPlugin {
         if (player != null) {
             if (Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() == -1) {
                 player.sendMessage("Your inventory is full, please make space to receive your order");
+                Variables.setFull(true);
             }
-
-            if ((Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() != 1) || (Variables.getInvcheck() == 0)) {
+            else {
+                Variables.setFull(false);
+            }
+            if ((Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() != 1 && !Variables.isFull()) || (Variables.getInvcheck() == 0)) {
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
                 SVariables.playersDone.add(Variables.getCommandid());
                 player.sendMessage("You just received your order, please contact an administrator if this is not true");
