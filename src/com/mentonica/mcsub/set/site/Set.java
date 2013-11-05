@@ -36,7 +36,7 @@ public class Set extends JavaPlugin {
                 System.out.println("Error occured, please contact an administrator");
                 Variables.setError(true);
             } else {
-                System.out.println("Successfully set all commands to done.");
+                //System.out.println("Successfully set all commands to done.");
             }
         }
     }

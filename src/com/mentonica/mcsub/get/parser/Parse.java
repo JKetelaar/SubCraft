@@ -37,13 +37,13 @@ public class Parse extends JavaPlugin {
             }
 
             if ((Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() != 1) || (Variables.getInvcheck() == 0)) {
-                player.sendMessage("You just received your order, please contact an administrator if this is not true");
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
                 SVariables.playersDone.add(Variables.getCommandid());
+                player.sendMessage("You just received your order, please contact an administrator if this is not true");
             }
 
         } else {
-            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player not found");
+            //Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player not found");
         }
         return false;
     }
