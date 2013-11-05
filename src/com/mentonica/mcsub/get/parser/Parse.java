@@ -14,18 +14,20 @@ public class Parse extends JavaPlugin {
             for (String s : Variables.getSplittedArray()) {
                 String[] t = s.split("%20");
                 Variables.setCommand(t[0]);
-                Variables.setTPlayer(t[1]);
-                Variables.setCommandid(t[2]);
-                System.out.println(Variables.getCommandid());
-                Variables.setInvcheck(Integer.parseInt(t[3]));
-                if (Variables.getInvcheck() == 1) {
-                    Variables.setInvamount(Integer.parseInt(t[4]));
+                if (t.length > 1) {
+                    Variables.setTPlayer(t[1]);
+                    Variables.setCommandid(t[2]);
+                    System.out.println(Variables.getCommandid());
+                    Variables.setInvcheck(Integer.parseInt(t[3]));
+                    if (Variables.getInvcheck() == 1) {
+                        Variables.setInvamount(Integer.parseInt(t[4]));
+                    }
+                    parse(Variables.getTPlayer());
                 }
-                parse(Variables.getTPlayer());
             }
         }
-    }
 
+    }
     public static boolean parse(String args) {
         Player player = Bukkit.getPlayerExact(args);
         if (player != null) {
