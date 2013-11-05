@@ -28,6 +28,7 @@ public class Parse extends JavaPlugin {
         }
 
     }
+
     public static boolean parse(String args) {
         Player player = Bukkit.getPlayerExact(args);
         if (player != null) {
