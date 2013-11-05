@@ -16,7 +16,7 @@ public class Set extends JavaPlugin {
     static String content = null;
 
     public static void set() throws IOException {
-        if (SVariables.playersDone.size() > 0) {
+        if (SVariables.playersDone.size() >= 1) {
             for (String s : SVariables.getPlayersDone()) {
                 String URL_LOCATION = Constants.URL_LOCATION + "set.php?commandid=" + s + "&key=" + Variables.getServerKey();
                 url = new URL(URL_LOCATION);
@@ -32,7 +32,7 @@ public class Set extends JavaPlugin {
                 }
                 br.close();
             }
-            if (content.toString() == "No results available to be set to done.") {
+            if (content.toString() != "Successfully set all commands to done.") {
                 System.out.println("Error occured, please contact an administrator");
                 Variables.setError(true);
             }
