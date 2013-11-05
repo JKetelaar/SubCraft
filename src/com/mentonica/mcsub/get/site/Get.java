@@ -39,7 +39,6 @@ public class Get extends JavaPlugin {
                 String t = "No results found.";
                 String f = "An error occurred, please contact the system administrator.";
                 if (Variables.getUrlContent().toString().equals(t) || Variables.getUrlContent().toString().equals(f)) {
-                    //System.out.println("No results found to execute commands for");
                     Variables.setAble(false);
                 }
 

@@ -35,8 +35,6 @@ public class Set extends JavaPlugin {
             if (content.toString() == "No results available to be set to done.") {
                 System.out.println("Error occured, please contact an administrator");
                 Variables.setError(true);
-            } else {
-                //System.out.println("Successfully set all commands to done.");
             }
         }
     }

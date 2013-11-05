@@ -17,7 +17,6 @@ public class Parse extends JavaPlugin {
                 if (t.length > 1) {
                     Variables.setTPlayer(t[1]);
                     Variables.setCommandid(t[2]);
-                    System.out.println(Variables.getCommandid());
                     Variables.setInvcheck(Integer.parseInt(t[3]));
                     if (Variables.getInvcheck() == 1) {
                         Variables.setInvamount(Integer.parseInt(t[4]));
@@ -42,8 +41,6 @@ public class Parse extends JavaPlugin {
                 player.sendMessage("You just received your order, please contact an administrator if this is not true");
             }
 
-        } else {
-            //Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "say Player not found");
         }
         return false;
     }
