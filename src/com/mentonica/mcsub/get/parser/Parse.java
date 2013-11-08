@@ -33,8 +33,7 @@ public class Parse extends JavaPlugin {
         if (player != null) {
             if (Variables.getInvcheck() == 1 && player.getInventory().firstEmpty() == -1) {
                 player.sendMessage("Your inventory is full, please make space to receive your order");
-            }
-            else {
+            } else {
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
                 SVariables.playersDone.add(Variables.getCommandid());
                 player.sendMessage("You just received your order, please contact an administrator if this is not true");

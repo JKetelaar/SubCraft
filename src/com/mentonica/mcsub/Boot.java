@@ -1,6 +1,7 @@
 package com.mentonica.mcsub;
 
 import com.mentonica.mcsub.get.data.Variables;
+import com.mentonica.mcsub.players.Insert;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -12,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Boot extends JavaPlugin implements Listener {
     Permission permission;
+
     public void onEnable() {
         PluginManager pm = Bukkit.getServer().getPluginManager();
         pm.registerEvents(this, this);
@@ -29,10 +31,9 @@ public class Boot extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        //System.out.println("this seems to work");
         Player player = event.getPlayer();
         String rank = permission.getPrimaryGroup(player);
         String playerName = player.toString();
-        System.out.println(rank);
+        Insert.insertPlayer(rank, playerName);
     }
 }
