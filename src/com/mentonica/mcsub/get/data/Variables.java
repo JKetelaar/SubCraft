@@ -26,6 +26,12 @@ public class Variables {
 
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
+    public static ArrayList<String> addedPlayers = new ArrayList<String>();
+
+    public static ArrayList<String> getAddedPlayers() {
+        return addedPlayers;
+    }
+
     public static String getServerKey() {
         return ServerKey;
     }

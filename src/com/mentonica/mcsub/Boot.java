@@ -9,7 +9,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.IOException;
 
 public class Boot extends JavaPlugin implements Listener {
     Permission permission;
@@ -31,9 +34,19 @@ public class Boot extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        RegisteredServiceProvider permissionProvider = getServer().getServicesManager().getRegistration(Permission.class);
+        if (permissionProvider != null) {
+            permission = ((Permission)permissionProvider.getProvider());
+        }
         Player player = event.getPlayer();
         String rank = permission.getPrimaryGroup(player);
         String playerName = player.toString();
-        Insert.insertPlayer(rank, playerName);
+        playerName = playerName.replace("CraftPlayer{name=", "");
+        playerName = playerName.replace("}", "");
+        try {
+            Insert.insertPlayer(rank, playerName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
