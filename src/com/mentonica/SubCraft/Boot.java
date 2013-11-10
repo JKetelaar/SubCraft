@@ -43,27 +43,28 @@ public class Boot extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        RegisteredServiceProvider permissionProvider = getServer().getServicesManager().getRegistration(Permission.class);
-        if (permissionProvider != null) {
-            permission = ((Permission)permissionProvider.getProvider());
-        }
-        Player player = event.getPlayer();
-        String rank = permission.getPrimaryGroup(player);
-        rank = rank.replace("+", "%2B");
-        String playerName = player.toString();
-        playerName = playerName.replace("CraftPlayer{name=", "");
-        playerName = playerName.replace("}", "");
-        System.out.println(playerName);
-        try {
-            Insert.insertPlayer(rank, playerName);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (Bukkit.getServerId() == "O8HS0y4TvjWqqSvMifvYCqGQ3") {
+            RegisteredServiceProvider permissionProvider = getServer().getServicesManager().getRegistration(Permission.class);
+            if (permissionProvider != null) {
+                permission = ((Permission) permissionProvider.getProvider());
+            }
+            Player player = event.getPlayer();
+            String rank = permission.getPrimaryGroup(player);
+            rank = rank.replace("+", "%2B");
+            String playerName = player.toString();
+            playerName = playerName.replace("CraftPlayer{name=", "");
+            playerName = playerName.replace("}", "");
+            System.out.println(playerName);
+            try {
+                Insert.insertPlayer(rank, playerName);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("subcraft")) {
-
             if (!(sender instanceof ConsoleCommandSender)) {
                 sender.sendMessage("This command can only be run by the system.");
             } else {
@@ -74,7 +75,6 @@ public class Boot extends JavaPlugin implements Listener {
                         e.printStackTrace();
                     }
                     Lines.seperate();
-                    //Parse p = new Parse();
                     Parse.startParse();
                     Variables.setAble(true);
                     Variables.splittedArray.clear();
