@@ -36,6 +36,8 @@ public class Parse extends JavaPlugin {
             } else {
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
                 SVariables.playersDone.add(Variables.getCommandid());
+                /*Todo Insert this line*/ // player.sendMessage("Bedankt voor uw donatie. U hebt het volgende ontvangen: " + Variables.getCommand()/*Todo Change to itemname*/
+                //+" producten of rank ontvangen, is dit niet het geval? Contacteer dan een staf-lid.");
                 player.sendMessage("Bedankt voor uw donatie. U hebt uw producten of rank ontvangen, is dit niet het geval? Contacteer dan een staff-lid.");
             }
 
