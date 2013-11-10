@@ -26,6 +26,7 @@ public class Boot extends JavaPlugin implements Listener {
     Permission permission;
 
     public void onEnable() {
+        //Todo #Add function for main server#
         PluginManager pm = Bukkit.getServer().getPluginManager();
         pm.registerEvents(this, this);
         getLogger().info("SubCraft started!");
