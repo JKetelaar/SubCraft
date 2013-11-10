@@ -11,6 +11,7 @@ import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -61,7 +62,8 @@ public class Boot extends JavaPlugin implements Listener {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("subcraft")) {
-            if ((sender instanceof Player)) {
+
+            if (!(sender instanceof ConsoleCommandSender)) {
                 sender.sendMessage("This command can only be run by the system.");
             } else {
                 if (!Variables.isError()) {
