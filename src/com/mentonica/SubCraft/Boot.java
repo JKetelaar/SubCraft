@@ -74,8 +74,8 @@ public class Boot extends JavaPlugin implements Listener {
                         e.printStackTrace();
                     }
                     Lines.seperate();
-                    Parse p = new Parse();
-                    p.startParse();
+                    //Parse p = new Parse();
+                    Parse.startParse();
                     Variables.setAble(true);
                     Variables.splittedArray.clear();
                     try {
