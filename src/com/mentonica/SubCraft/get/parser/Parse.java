@@ -36,7 +36,7 @@ public class Parse extends JavaPlugin {
             } else {
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), Variables.getCommand());
                 SVariables.playersDone.add(Variables.getCommandid());
-                player.sendMessage("You just received your order, please contact an administrator if this is not true");
+                player.sendMessage("Bedankt voor uw donatie. U hebt uw producten of rank ontvangen, is dit niet het geval? Contacteer dan een staff-lid.");
             }
 
         }
