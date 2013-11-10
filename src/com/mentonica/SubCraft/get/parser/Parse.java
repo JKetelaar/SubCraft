@@ -1,7 +1,7 @@
-package com.mentonica.mcsub.get.parser;
+package com.mentonica.SubCraft.get.parser;
 
-import com.mentonica.mcsub.get.data.Variables;
-import com.mentonica.mcsub.set.SVariables;
+import com.mentonica.SubCraft.get.data.Variables;
+import com.mentonica.SubCraft.set.SVariables;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;

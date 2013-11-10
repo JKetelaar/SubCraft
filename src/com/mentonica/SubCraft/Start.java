@@ -1,11 +1,11 @@
-package com.mentonica.mcsub;
+package com.mentonica.SubCraft;
 
-import com.mentonica.mcsub.get.data.Variables;
-import com.mentonica.mcsub.get.parser.Parse;
-import com.mentonica.mcsub.get.site.Get;
-import com.mentonica.mcsub.get.site.Lines;
-import com.mentonica.mcsub.set.SVariables;
-import com.mentonica.mcsub.set.site.Set;
+import com.mentonica.SubCraft.get.data.Variables;
+import com.mentonica.SubCraft.get.parser.Parse;
+import com.mentonica.SubCraft.get.site.Get;
+import com.mentonica.SubCraft.get.site.Lines;
+import com.mentonica.SubCraft.set.SVariables;
+import com.mentonica.SubCraft.set.site.Set;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
@@ -34,6 +34,7 @@ public class Start extends JavaPlugin {
                                 e.printStackTrace();
                             }
                             SVariables.playersDone.clear();
+                            //System.out.println("We're here");
                         }
                     }
                 },

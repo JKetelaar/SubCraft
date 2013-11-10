@@ -1,4 +1,4 @@
-package com.mentonica.mcsub.get.data;
+package com.mentonica.SubCraft.get.data;
 
 import java.util.ArrayList;
 

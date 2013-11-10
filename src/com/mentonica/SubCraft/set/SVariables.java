@@ -1,4 +1,4 @@
-package com.mentonica.mcsub.set;
+package com.mentonica.SubCraft.set;
 
 import java.util.ArrayList;
 

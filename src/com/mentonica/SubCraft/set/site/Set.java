@@ -1,8 +1,8 @@
-package com.mentonica.mcsub.set.site;
+package com.mentonica.SubCraft.set.site;
 
-import com.mentonica.mcsub.get.data.Constants;
-import com.mentonica.mcsub.get.data.Variables;
-import com.mentonica.mcsub.set.SVariables;
+import com.mentonica.SubCraft.get.data.Constants;
+import com.mentonica.SubCraft.get.data.Variables;
+import com.mentonica.SubCraft.set.SVariables;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.BufferedReader;

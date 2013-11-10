@@ -1,7 +1,7 @@
-package com.mentonica.mcsub.players;
+package com.mentonica.SubCraft.players;
 
-import com.mentonica.mcsub.get.data.Constants;
-import com.mentonica.mcsub.get.data.Variables;
+import com.mentonica.SubCraft.get.data.Constants;
+import com.mentonica.SubCraft.get.data.Variables;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.BufferedReader;
@@ -20,6 +20,7 @@ public class Insert extends JavaPlugin {
             new BufferedReader(
                     new InputStreamReader(conn.getInputStream()));
             Variables.addedPlayers.add(playerName);
+            System.out.println(URL_LOCATION);
         }
     }
 }

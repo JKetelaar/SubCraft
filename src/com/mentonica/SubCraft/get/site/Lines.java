@@ -1,6 +1,6 @@
-package com.mentonica.mcsub.get.site;
+package com.mentonica.SubCraft.get.site;
 
-import com.mentonica.mcsub.get.data.Variables;
+import com.mentonica.SubCraft.get.data.Variables;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Lines extends JavaPlugin {

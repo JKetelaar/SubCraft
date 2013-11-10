@@ -1,3 +1,9 @@
-name: MCSub
-main: com.mentonica.mcsub.Boot
+name: SubCraft
+main: com.mentonica.SubCraft.Boot
 version: 2.0
+commands:
+   basic:
+      description: This is a demo command.
+      usage: /<command> [player]
+      permission: GroupManager.basic
+      permission-message: You don't have <permission>
