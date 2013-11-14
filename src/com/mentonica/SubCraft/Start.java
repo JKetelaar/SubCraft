@@ -34,7 +34,6 @@ public class Start extends JavaPlugin {
                                 e.printStackTrace();
                             }
                             SVariables.playersDone.clear();
-                            //System.out.println("We're here");
                         }
                     }
                 },
