@@ -26,7 +26,7 @@ public class Read {
         return true;
     }
 
-    public static void ReadConfigFile() throws FileNotFoundException, UnsupportedEncodingException {
+    public static void ReadConfigFile() throws IOException {
         File cf = new File(Variables.getPluginFolder() + "/config.yml");
         if (!cf.exists()){
             Write.writeConfigFile(cf);

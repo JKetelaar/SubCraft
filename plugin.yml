@@ -2,8 +2,14 @@ name: SubCraft
 main: com.mentonica.SubCraft.Boot
 version: 2.0
 commands:
-   subcraft:
-      description: This is a demo command.
-      usage: /<command> [player]
-      permission: GroupManager.basic
+   sbkey:
+      description: Sets the key for SubCraft
+      usage: /<command> [key of 25 characters]
+      permission: subcraft.basic
+      permission-message: You don't have <permission>
+
+   sbrefresh:
+      description: Refreshes the SubCraft purchases
+      usage: /<command>
+      permission: subcraft.refresh
       permission-message: You don't have <permission>

@@ -17,6 +17,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,28 +29,24 @@ public class Boot extends JavaPlugin implements Listener {
     File pluginFolder = new File("plugins/SubCraft");
 
     public void onEnable() {
-            System.out.println("HERE WE ARE");
-            System.out.println(pluginFolder);
-
         Variables.setPluginFolder(pluginFolder);
 
         Read.ReadFolder();
         if (!Read.FReadConfigFile()) {
             Variables.setConfigExists(false);
-        }
-        else{
+        } else {
             Variables.setConfigExists(true);
         }
-//        if (Variables.isFileExists()) {
-//            //Todo Add function for main server (player insertion)
-//            PluginManager pm = Bukkit.getServer().getPluginManager();
-//            pm.registerEvents(this, this);
-//            getLogger().info("SubCraft started!");
-//            Variables.setServerKey(Bukkit.getServerId());
-//            Variables.setError(false);
-//            Start t = new Start();
-//            t.startTimer();
-//        }
+        if (Variables.isConfigExists()) {
+            //Todo Add function for main server (player insertion)
+            PluginManager pm = Bukkit.getServer().getPluginManager();
+            pm.registerEvents(this, this);
+            getLogger().info("SubCraft started!");
+            Variables.setServerKey(Bukkit.getServerId());
+            Variables.setError(false);
+            Start t = new Start();
+            t.startTimer();
+        }
     }
 
     @Override
@@ -80,11 +77,24 @@ public class Boot extends JavaPlugin implements Listener {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("subcraft")) {
+        if (cmd.getName().equalsIgnoreCase("sbkey") || cmd.getName().equalsIgnoreCase("sbrefresh")) {
             if (!(sender instanceof ConsoleCommandSender)) {
-                sender.sendMessage("This command can only be run by the system.");
+                sender.sendMessage("This command can only be run by the system");
             } else {
-                if (!Variables.isError()) {
+                if (!Variables.isConfigExists() && cmd.getName().equalsIgnoreCase("sbkey") && args[0].length() == 25) {
+
+                    String c = args[0];
+                    Variables.setServerKey(c);
+                    try {
+                        Read.ReadConfigFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }else if(Variables.isConfigExists()){
+                    System.out.println("The SubCraft configuration key is already set.");
+                }
+                else if (!Variables.isError() && cmd.getName().equalsIgnoreCase("sbrefresh")) {
                     try {
                         Get.getUsers();
                     } catch (Exception e) {
@@ -101,9 +111,14 @@ public class Boot extends JavaPlugin implements Listener {
                     }
                     SVariables.playersDone.clear();
                 }
+                else{
+                    return false;
+                }
             }
             return true;
         }
         return false;
     }
 }
+
+
