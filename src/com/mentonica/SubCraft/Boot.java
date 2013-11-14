@@ -17,7 +17,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -36,18 +35,21 @@ public class Boot extends JavaPlugin implements Listener {
 
         Read.ReadFolder();
         if (!Read.FReadConfigFile()) {
-            Variables.setFileExists(false);
+            Variables.setConfigExists(false);
         }
-        if (Variables.isFileExists()) {
-            //Todo Add function for main server (player insertion)
-            PluginManager pm = Bukkit.getServer().getPluginManager();
-            pm.registerEvents(this, this);
-            getLogger().info("SubCraft started!");
-            Variables.setServerKey(Bukkit.getServerId());
-            Variables.setError(false);
-            Start t = new Start();
-            t.startTimer();
+        else{
+            Variables.setConfigExists(true);
         }
+//        if (Variables.isFileExists()) {
+//            //Todo Add function for main server (player insertion)
+//            PluginManager pm = Bukkit.getServer().getPluginManager();
+//            pm.registerEvents(this, this);
+//            getLogger().info("SubCraft started!");
+//            Variables.setServerKey(Bukkit.getServerId());
+//            Variables.setError(false);
+//            Start t = new Start();
+//            t.startTimer();
+//        }
     }
 
     @Override

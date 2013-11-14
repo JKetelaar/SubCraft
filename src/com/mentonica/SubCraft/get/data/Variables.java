@@ -29,18 +29,18 @@ public class Variables {
 
     private static String SubCraftKey;
 
-    private static boolean FileExists;
+    private static boolean ConfigExists;
 
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
     public static ArrayList<String> addedPlayers = new ArrayList<String>();
 
-    public static boolean isFileExists() {
-        return FileExists;
+    public static boolean isConfigExists() {
+        return ConfigExists;
     }
 
-    public static void setFileExists(boolean fileExists) {
-        FileExists = fileExists;
+    public static void setConfigExists(boolean configExists) {
+        ConfigExists = configExists;
     }
 
     public static File getPluginFolder() {

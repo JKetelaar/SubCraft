@@ -8,7 +8,7 @@ import java.io.*;
 public class Read {
 
     public static void ReadFolder() {
-        File f = new File(Variables.getPluginFolder() + "/");
+        File f = Variables.getPluginFolder();
         if (!f.exists()) {
             CreateFolder(f);
         }
