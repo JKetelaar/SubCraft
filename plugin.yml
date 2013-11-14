@@ -1,6 +1,6 @@
 name: SubCraft
 main: com.mentonica.SubCraft.Boot
-version: 2.0
+version: 2.3
 commands:
    sckey:
       description: Sets the key for SubCraft

@@ -29,6 +29,7 @@ public class Boot extends JavaPlugin implements Listener {
     File pluginFolder = new File("plugins/SubCraft");
 
     public void onEnable() {
+        //Todo rewrite config system
         Variables.setPluginFolder(pluginFolder);
 
         Read.ReadFolder();
@@ -94,7 +95,7 @@ public class Boot extends JavaPlugin implements Listener {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                System.out.println("SubCraft key is set to " + Variables.getSubCraftKey());
+                    System.out.println("SubCraft key is set to " + Variables.getSubCraftKey());
                 } else if (Variables.isConfigExists() && cmd.getName().equalsIgnoreCase("sckey") && args[0].length() == 25) {
                     System.out.println("The SubCraft configuration key is already set.");
                 } else if (!Variables.isError() && cmd.getName().equalsIgnoreCase("screfresh")) {
