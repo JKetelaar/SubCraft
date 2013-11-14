@@ -1,8 +1,11 @@
 package com.mentonica.SubCraft.get.data;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Variables {
+
+    private static File pluginFolder;
 
     private static String TPlayer;
 
@@ -24,9 +27,37 @@ public class Variables {
 
     private static boolean full;
 
+    private static String SubCraftKey;
+
+    private static boolean FileExists;
+
     public static ArrayList<String> splittedArray = new ArrayList<String>();
 
     public static ArrayList<String> addedPlayers = new ArrayList<String>();
+
+    public static boolean isFileExists() {
+        return FileExists;
+    }
+
+    public static void setFileExists(boolean fileExists) {
+        FileExists = fileExists;
+    }
+
+    public static File getPluginFolder() {
+        return pluginFolder;
+    }
+
+    public static void setPluginFolder(File pluginFolder) {
+        Variables.pluginFolder = pluginFolder;
+    }
+
+    public static String getSubCraftKey() {
+        return SubCraftKey;
+    }
+
+    public static void setSubCraftKey(String subCraftKey) {
+        SubCraftKey = subCraftKey;
+    }
 
     public static ArrayList<String> getAddedPlayers() {
         return addedPlayers;

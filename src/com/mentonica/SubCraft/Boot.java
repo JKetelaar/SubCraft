@@ -5,6 +5,7 @@ import com.mentonica.SubCraft.get.parser.Parse;
 import com.mentonica.SubCraft.get.site.Get;
 import com.mentonica.SubCraft.get.site.Lines;
 import com.mentonica.SubCraft.players.Insert;
+import com.mentonica.SubCraft.reader.Read;
 import com.mentonica.SubCraft.set.SVariables;
 import com.mentonica.SubCraft.set.site.Set;
 import net.milkbowl.vault.permission.Permission;
@@ -20,20 +21,33 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Boot extends JavaPlugin implements Listener {
     Permission permission;
+    File pluginFolder = new File("plugins/SubCraft");
 
     public void onEnable() {
-        //Todo #Add function for main server (player insertion)#
-        PluginManager pm = Bukkit.getServer().getPluginManager();
-        pm.registerEvents(this, this);
-        getLogger().info("SubCraft started!");
-        Variables.setServerKey(Bukkit.getServerId());
-        Variables.setError(false);
-        Start t = new Start();
-        t.startTimer();
+            System.out.println("HERE WE ARE");
+            System.out.println(pluginFolder);
+
+        Variables.setPluginFolder(pluginFolder);
+
+        Read.ReadFolder();
+        if (!Read.FReadConfigFile()) {
+            Variables.setFileExists(false);
+        }
+        if (Variables.isFileExists()) {
+            //Todo Add function for main server (player insertion)
+            PluginManager pm = Bukkit.getServer().getPluginManager();
+            pm.registerEvents(this, this);
+            getLogger().info("SubCraft started!");
+            Variables.setServerKey(Bukkit.getServerId());
+            Variables.setError(false);
+            Start t = new Start();
+            t.startTimer();
+        }
     }
 
     @Override
