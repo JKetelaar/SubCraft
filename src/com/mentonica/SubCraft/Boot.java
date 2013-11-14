@@ -28,6 +28,8 @@ public class Boot extends JavaPlugin implements Listener {
     Permission permission;
     File pluginFolder = new File("plugins/SubCraft");
 
+
+
     public void onEnable() {
         Variables.setPluginFolder(pluginFolder);
 
@@ -91,7 +93,7 @@ public class Boot extends JavaPlugin implements Listener {
                         e.printStackTrace();
                     }
 
-                }else if(Variables.isConfigExists()){
+                }else if(Variables.isConfigExists() && cmd.getName().equalsIgnoreCase("sbkey") && args[0].length() == 25){
                     System.out.println("The SubCraft configuration key is already set.");
                 }
                 else if (!Variables.isError() && cmd.getName().equalsIgnoreCase("sbrefresh")) {
