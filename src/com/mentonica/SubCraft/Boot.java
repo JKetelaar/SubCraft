@@ -32,10 +32,14 @@ public class Boot extends JavaPlugin implements Listener {
         Variables.setPluginFolder(pluginFolder);
 
         Read.ReadFolder();
-        if (!Read.FReadConfigFile()) {
-            Variables.setConfigExists(false);
-        } else {
-            Variables.setConfigExists(true);
+        try {
+            if (!Read.FReadConfigFile()) {
+                Variables.setConfigExists(false);
+            } else {
+                Variables.setConfigExists(true);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         if (Variables.isConfigExists()) {
             //Todo Add function for main server (player insertion)
@@ -77,11 +81,11 @@ public class Boot extends JavaPlugin implements Listener {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("sbkey") || cmd.getName().equalsIgnoreCase("sbrefresh")) {
+        if (cmd.getName().equalsIgnoreCase("sckey") || cmd.getName().equalsIgnoreCase("screfresh")) {
             if (!(sender instanceof ConsoleCommandSender)) {
                 sender.sendMessage("This command can only be run by the system");
             } else {
-                if (!Variables.isConfigExists() && cmd.getName().equalsIgnoreCase("sbkey") && args[0].length() == 25) {
+                if (!Variables.isConfigExists() && cmd.getName().equalsIgnoreCase("sckey") && args[0].length() == 25) {
 
                     String c = args[0];
                     Variables.setServerKey(c);
@@ -90,10 +94,10 @@ public class Boot extends JavaPlugin implements Listener {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
-                } else if (Variables.isConfigExists() && cmd.getName().equalsIgnoreCase("sbkey") && args[0].length() == 25) {
+                System.out.println("SubCraft key is set to " + Variables.getSubCraftKey());
+                } else if (Variables.isConfigExists() && cmd.getName().equalsIgnoreCase("sckey") && args[0].length() == 25) {
                     System.out.println("The SubCraft configuration key is already set.");
-                } else if (!Variables.isError() && cmd.getName().equalsIgnoreCase("sbrefresh")) {
+                } else if (!Variables.isError() && cmd.getName().equalsIgnoreCase("screfresh")) {
                     try {
                         Get.getUsers();
                     } catch (Exception e) {
