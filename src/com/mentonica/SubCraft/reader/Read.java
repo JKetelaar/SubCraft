@@ -3,7 +3,8 @@ package com.mentonica.SubCraft.reader;
 import com.mentonica.SubCraft.get.data.Variables;
 import com.mentonica.SubCraft.writer.Write;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Read {
 
@@ -18,9 +19,9 @@ public class Read {
         f.mkdir();
     }
 
-    public static boolean FReadConfigFile(){
+    public static boolean FReadConfigFile() {
         File cf = new File(Variables.getPluginFolder() + "/config.yml");
-        if (!cf.exists()){
+        if (!cf.exists()) {
             return false;
         }
         return true;
@@ -28,7 +29,7 @@ public class Read {
 
     public static void ReadConfigFile() throws IOException {
         File cf = new File(Variables.getPluginFolder() + "/config.yml");
-        if (!cf.exists()){
+        if (!cf.exists()) {
             Write.writeConfigFile(cf);
         }
     }
