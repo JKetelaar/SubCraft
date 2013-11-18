@@ -2,10 +2,10 @@ package com.mentonica.SubCraft.reader;
 
 import com.mentonica.SubCraft.get.data.Variables;
 import com.mentonica.SubCraft.writer.Write;
-import org.apache.commons.io.IOUtils;
 
+import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class Read {
@@ -22,15 +22,29 @@ public class Read {
     }
 
     public static boolean FReadConfigFile() throws IOException {
+        BufferedReader br = null;
         File cf = new File(Variables.getPluginFolder() + "/config.yml");
         if (!cf.exists()) {
             return false;
         } else {
-            FileInputStream inputStream = new FileInputStream("foo.txt");
             try {
-                Variables.setSubCraftKey(IOUtils.toString(inputStream));
+
+                String key;
+
+                br = new BufferedReader(new FileReader(Variables.getPluginFolder() + "/config.yml"));
+
+                while ((key = br.readLine()) != null) {
+                    Variables.setSubCraftKey(key);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             } finally {
-                inputStream.close();
+                try {
+                    if (br != null) br.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
             return true;
         }

@@ -42,6 +42,7 @@ public class Boot extends JavaPlugin implements Listener {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("The server key is: " + Variables.getSubCraftKey());
         if (Variables.isConfigExists()) {
             //Todo Add function for main server (player insertion)
             PluginManager pm = Bukkit.getServer().getPluginManager();
