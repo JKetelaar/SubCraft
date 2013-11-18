@@ -1,13 +1,13 @@
-package com.mentonica.SubCraft;
+package com.mentonica.subcraft;
 
-import com.mentonica.SubCraft.get.data.Variables;
-import com.mentonica.SubCraft.get.parser.Parse;
-import com.mentonica.SubCraft.get.site.Get;
-import com.mentonica.SubCraft.get.site.Lines;
-import com.mentonica.SubCraft.players.Insert;
-import com.mentonica.SubCraft.reader.Read;
-import com.mentonica.SubCraft.set.SVariables;
-import com.mentonica.SubCraft.set.site.Set;
+import com.mentonica.subcraft.get.data.Variables;
+import com.mentonica.subcraft.get.parser.Parse;
+import com.mentonica.subcraft.get.site.Get;
+import com.mentonica.subcraft.get.site.Lines;
+import com.mentonica.subcraft.players.Insert;
+import com.mentonica.subcraft.reader.Read;
+import com.mentonica.subcraft.set.SVariables;
+import com.mentonica.subcraft.set.site.Set;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -26,7 +26,7 @@ import java.io.IOException;
 
 public class Boot extends JavaPlugin implements Listener {
     Permission permission;
-    File pluginFolder = new File("plugins/SubCraft");
+    File pluginFolder = new File("plugins/subcraft");
 
     public void onEnable() {
         //Todo rewrite config system
@@ -47,7 +47,7 @@ public class Boot extends JavaPlugin implements Listener {
             //Todo Add function for main server (player insertion)
             PluginManager pm = Bukkit.getServer().getPluginManager();
             pm.registerEvents(this, this);
-            getLogger().info("SubCraft started!");
+            getLogger().info("subcraft started!");
             Variables.setServerKey(Bukkit.getServerId());
             Variables.setError(false);
             Start t = new Start();
@@ -57,7 +57,7 @@ public class Boot extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        getLogger().info("SubCraft stopped!");
+        getLogger().info("subcraft stopped!");
     }
 
     @EventHandler
@@ -96,9 +96,9 @@ public class Boot extends JavaPlugin implements Listener {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("SubCraft key is set to " + Variables.getSubCraftKey());
+                    System.out.println("subcraft key is set to " + Variables.getSubCraftKey());
                 } else if (Variables.isConfigExists() && cmd.getName().equalsIgnoreCase("sckey") && args[0].length() == 25) {
-                    System.out.println("The SubCraft configuration key is already set.");
+                    System.out.println("The subcraft configuration key is already set.");
                 } else if (!Variables.isError() && cmd.getName().equalsIgnoreCase("screfresh")) {
                     try {
                         Get.getUsers();

@@ -1,7 +1,7 @@
-package com.mentonica.SubCraft.players;
+package com.mentonica.subcraft.players;
 
-import com.mentonica.SubCraft.get.data.Constants;
-import com.mentonica.SubCraft.get.data.Variables;
+import com.mentonica.subcraft.get.data.Constants;
+import com.mentonica.subcraft.get.data.Variables;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.BufferedReader;

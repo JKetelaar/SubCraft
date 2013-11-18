@@ -1,11 +1,11 @@
-package com.mentonica.SubCraft;
+package com.mentonica.subcraft;
 
-import com.mentonica.SubCraft.get.data.Variables;
-import com.mentonica.SubCraft.get.parser.Parse;
-import com.mentonica.SubCraft.get.site.Get;
-import com.mentonica.SubCraft.get.site.Lines;
-import com.mentonica.SubCraft.set.SVariables;
-import com.mentonica.SubCraft.set.site.Set;
+import com.mentonica.subcraft.get.data.Variables;
+import com.mentonica.subcraft.get.parser.Parse;
+import com.mentonica.subcraft.get.site.Get;
+import com.mentonica.subcraft.get.site.Lines;
+import com.mentonica.subcraft.set.SVariables;
+import com.mentonica.subcraft.set.site.Set;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;

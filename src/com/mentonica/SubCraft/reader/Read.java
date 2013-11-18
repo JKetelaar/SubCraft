@@ -1,7 +1,7 @@
-package com.mentonica.SubCraft.reader;
+package com.mentonica.subcraft.reader;
 
-import com.mentonica.SubCraft.get.data.Variables;
-import com.mentonica.SubCraft.writer.Write;
+import com.mentonica.subcraft.get.data.Variables;
+import com.mentonica.subcraft.writer.Write;
 
 import java.io.BufferedReader;
 import java.io.File;

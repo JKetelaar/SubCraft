@@ -1,6 +1,6 @@
-package com.mentonica.SubCraft.notify;
+package com.mentonica.subcraft.notify;
 
-import com.mentonica.SubCraft.get.data.Constants;
+import com.mentonica.subcraft.get.data.Constants;
 
 import java.io.BufferedReader;
 import java.io.IOException;

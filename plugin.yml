@@ -1,5 +1,5 @@
 name: SubCraft
-main: com.mentonica.SubCraft.Boot
+main: com.mentonica.subcraft.Boot
 version: 2.3
 commands:
    sckey:
